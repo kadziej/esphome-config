@@ -1,0 +1,5 @@
+---
+api:
+  password: ${api_pass_substitution}"
+  id: "api_${devicenumber}"
+  reboot_timeout: 15min
