@@ -1,7 +1,7 @@
 ---
 wifi:
-  ssid: ${wifi_ssid_substitution}"
-  password: ${wifi_password_substitution}"
+  ssid: ${wifi_ssid_substitution}
+  password: ${wifi_password_substitution}
   manual_ip:
     static_ip: "192.168.10.${devicenumber}"
     gateway: 192.168.10.1
