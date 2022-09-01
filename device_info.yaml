@@ -1,0 +1,25 @@
+---
+binary_sensor:
+  platform: status
+  name: "${devicenumber}_Status"
+
+text_sensor:
+  platform: version
+  name: "${devicenumber}_ESPHome_Version"
+
+sensor:
+  - platform: wifi_signal
+    name: "${devicenumber}_WiFi_Signal"
+    update_interval: 1min
+    filters:
+      - sliding_window_moving_average:
+          window_size: 20
+          send_every: 20
+
+  - platform: uptime
+    name: "${devicenumber}_Uptime"
+    unit_of_measurement: h
+    update_interval: 60s
+    force_update: false
+    filters:
+      - lambda: return int((x + 1800.0) / 3600.0);
