@@ -1,0 +1,39 @@
+---
+sensor:
+- platform: ade7953
+  voltage:
+    name: "${devicenumber}_AC_Voltage"
+    filters:
+    - sliding_window_moving_average:
+        window_size: 20
+        send_every: 20
+    - delta: 0.5
+  current_a:
+    # name: "${devicenumber}_Current_2"
+    id: Current_2
+  current_b:
+    # name: "${devicenumber}_Current_1"
+    id: Current_1
+
+  active_power_a:
+    id: Active_Power_2
+    name: "${devicenumber}_Active_Power_2"
+    filters:
+    - sliding_window_moving_average:
+        window_size: 20
+        send_every: 20
+    - delta: 0.2
+    - lambda: if (x < (1)) return 0; else return x;
+
+  active_power_b:
+    id: Active_Power_1
+    name: "${devicenumber}_Active_Power_1"
+    filters:
+    - multiply: -1.0
+    - sliding_window_moving_average:
+        window_size: 20
+        send_every: 20
+    - lambda: if (x < (1)) return 0; else return x;
+    - delta: 0.2
+
+  update_interval: 100ms
