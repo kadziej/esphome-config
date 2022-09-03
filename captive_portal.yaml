@@ -1,0 +1,6 @@
+---
+wifi:
+  ap:
+    password: ${wifi_password_substitution}
+
+captive_portal:
