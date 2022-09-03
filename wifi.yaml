@@ -10,7 +10,4 @@ wifi:
   reboot_timeout: 15min
   #power_save_mode: NONE
   use_address: "192.168.10.${devicenumber}"
-  ap:
-    password: ${wifi_password_substitution}
-
-captive_portal:
+  
