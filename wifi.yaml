@@ -6,6 +6,8 @@ wifi:
     static_ip: "192.168.10.${devicenumber}"
     gateway: 192.168.10.1
     subnet: 255.255.255.0
+    dns1: 8.8.8.8
+    dns2: 8.8.4.4
   fast_connect: False
   reboot_timeout: 15min
   #power_save_mode: NONE
