@@ -1,0 +1,18 @@
+---
+sensor:
+  - platform: ade7953
+    irq_pin: GPIO16
+    voltage:
+      name: "${devicenumber}_Voltage"
+      internal: true
+      filters:
+        - throttle: 5s
+    current_b:
+      name: "${devicenumber}_Open_Current"
+      id: id_current_b
+      internal: true
+    current_a:
+      name: "${devicenumber}_Close_Current"
+      id: id_current_a
+      internal: true
+    update_interval: 0.5s
