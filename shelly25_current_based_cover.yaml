@@ -16,3 +16,12 @@ sensor:
       id: id_current_a
       internal: true
     update_interval: 0.5s
+
+i2c:
+  sda: GPIO12
+  scl: GPIO14
+
+status_led:
+  pin:
+    number: GPIO0
+    inverted: yes
