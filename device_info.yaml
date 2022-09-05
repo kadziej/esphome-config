@@ -3,10 +3,6 @@ binary_sensor:
   platform: status
   name: "${devicenumber}_Status"
 
-text_sensor:
-  platform: version
-  name: "${devicenumber}_ESPHome_Version"
-
 sensor:
   - platform: wifi_signal
     name: "${devicenumber}_WiFi_Signal"
